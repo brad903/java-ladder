@@ -1,29 +1,28 @@
 package ladder;
 
-import java.util.Random;
+import java.util.ArrayList;
 
 public class ResultView {
     public static final String LADDER_COL = "|";
     public static final String LADDER_ROW = "-";
     public static final String LADDER_BLANK = " ";
 
-    public static void printLadder(int peopleCount, int ladderHeight) {
-        for (int i = 0; i < ladderHeight; i++) {
-            printOneLayer(peopleCount);
+    public static void printLadder(ArrayList<ArrayList<Boolean>> ladderValues) {
+        for (ArrayList ladderValue : ladderValues) {
+            printOneLayer(ladderValue);
         }
     }
 
-    public static void printOneLayer(int peopleCount) {
-        for (int i = 0; i < peopleCount - 1; i++) {
+    public static void printOneLayer(ArrayList<Boolean> ladderValue) {
+        for (Boolean isLadder : ladderValue) {
             System.out.print(LADDER_COL);
-            printEachLadder();
+            printEachLadder(isLadder);
         }
         System.out.println(LADDER_COL);
     }
 
-    public static void printEachLadder() {
-        Random random = new Random();
-        if (LadderGame.isEligible(random.nextInt(10))) {
+    public static void printEachLadder(boolean isLadder) {
+        if (isLadder) {
             System.out.print(LADDER_ROW);
             return;
         }
