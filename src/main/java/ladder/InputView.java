@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class InputView {
 
     private InputView() {
-    } // prevent making instance
+    }  // prevent making instance
 
     public static int getPeopleCount() {
         Scanner scan = new Scanner(System.in);

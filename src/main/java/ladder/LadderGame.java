@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class LadderGame {
-    public static final int PASS_VALUE = 5;
-    public static final int PASS_BOUND = 10;
+    public static final int RANDOM_PASS = 5;
+    public static final int RANDOM_BOUND = 10;
     private int peopleCount;
     private int ladderHeight;
     private ArrayList<ArrayList<Boolean>> ladderValues = new ArrayList<>();
@@ -16,7 +16,7 @@ public class LadderGame {
     }
 
     public boolean isEligible(int randomValue) {
-        return randomValue >= PASS_VALUE;
+        return randomValue >= RANDOM_PASS;
     }
 
     public void storeLadder() {
@@ -29,7 +29,7 @@ public class LadderGame {
         ArrayList<Boolean> ladderValue = new ArrayList<>();
         for (int i = 0; i < peopleCount - 1; i++) {
             Random random = new Random();
-            ladderValue.add(storeEachLadder(random.nextInt(PASS_BOUND)));
+            ladderValue.add(storeEachLadder(random.nextInt(RANDOM_BOUND)));
         }
         ladderValues.add(ladderValue);
     }
