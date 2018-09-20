@@ -1,11 +1,9 @@
-package ladder;
+package ladder.domain;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
+import ladder.domain.LadderGame;
+import ladder.domain.Line;
 import org.junit.Test;
-
-
-import java.util.ArrayList;
+import java.util.List;
 
 
 public class LadderGameTest {
@@ -13,11 +11,11 @@ public class LadderGameTest {
     int testHeight = 5;
 
     @Test
-    public void showLadderStatus() {
+    public void 사다리값_정보_출력() {
         LadderGame ladderGame = new LadderGame(testUsers, testHeight);
         ladderGame.storeLadder();
 
-        ArrayList<Line> ladderValues = ladderGame.getLadderValues();
+        List<Line> ladderValues = ladderGame.getLadderValues();
         for (Line line : ladderValues) {
             ladderOneLine(line);
             System.out.println();

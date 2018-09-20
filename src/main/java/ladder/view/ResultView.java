@@ -1,13 +1,17 @@
-package ladder;
+package ladder.view;
 
-import java.util.ArrayList;
+import ladder.domain.Line;
+import ladder.domain.User;
+
+import java.util.List;
 
 public class ResultView {
     public static final String LADDER_COL = "|";
     public static final String LADDER_ROW = "-----";
     public static final String LADDER_BLANK = "     ";
+    public static final String NAME_SPACE = "6";
 
-    public static void printLadder(ArrayList<User> users, ArrayList<Line> ladderValues) {
+    public static void printLadder(List<User> users, List<Line> ladderValues) {
         System.out.println();
         System.out.println("실행결과");
         System.out.println();
@@ -17,14 +21,14 @@ public class ResultView {
         }
     }
 
-    private static void printUserNames(ArrayList<User> users) {
+    private static void printUserNames(List<User> users) {
         for (User user : users) {
-            System.out.printf("%6s", user.getUserName());
+            System.out.printf("%" + NAME_SPACE + "s", user.printUserName());
         }
         System.out.println();
     }
 
-    public static void printOneLine(Line line, int printLength) {
+    private static void printOneLine(Line line, int printLength) {
         System.out.print(LADDER_BLANK);
         for (int i = 0; i < printLength; i++) {
             System.out.print(LADDER_COL);
@@ -33,7 +37,7 @@ public class ResultView {
         System.out.println(LADDER_COL);
     }
 
-    public static void printEachLadder(boolean isLadder) {
+    private static void printEachLadder(boolean isLadder) {
         if (isLadder) {
             System.out.print(LADDER_ROW);
             return;

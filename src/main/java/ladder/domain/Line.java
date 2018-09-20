@@ -1,11 +1,11 @@
-package ladder;
+package ladder.domain;
+
+import ladder.utils.GetRandomVal;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Line {
-    public static final int RANDOM_BOUND = 10;
-    public static final int RANDOM_PASS = 5;
+    private static final int RANDOM_PASS = 5;
     private int countOfPerson;
     private ArrayList<Boolean> points = new ArrayList<>();
 
@@ -15,8 +15,7 @@ public class Line {
 
     public void store() {
         for (int i = 0; i < countOfPerson - 1; i++) {
-            Random random = new Random();
-            points.add(judgeEachLadder(random.nextInt(RANDOM_BOUND), i));
+            points.add(judgeEachLadder(GetRandomVal.getVal(), i));
         }
     }
 
