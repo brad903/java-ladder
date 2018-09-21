@@ -1,18 +1,18 @@
 package ladder.domain;
 
-import ladder.domain.LadderGame;
-import ladder.domain.Line;
 import org.junit.Test;
+
 import java.util.List;
 
 
 public class LadderGameTest {
     String testUsers = "pobi,honux,crong,jk";
     int testHeight = 5;
+    String testResult = "꽝,5000,꽝,3000";
 
     @Test
     public void 사다리값_정보_출력() {
-        LadderGame ladderGame = new LadderGame(testUsers, testHeight);
+        LadderGame ladderGame = new LadderGame(testUsers, testResult, testHeight);
         ladderGame.storeLadder();
 
         List<Line> ladderValues = ladderGame.getLadderValues();

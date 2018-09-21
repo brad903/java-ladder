@@ -7,7 +7,7 @@ public class GetRandomVal {
 
     private GetRandomVal() {}  // prevent making instance
 
-    public static int getVal() {
+    public static int getRandomVal() {
         Random random = new Random();
         return random.nextInt(RANDOM_BOUND);
     }

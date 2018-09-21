@@ -7,11 +7,11 @@ public class GetRandomValTest {
 
     @Test
     public void 제한된범위_넘는_랜덤값() {
-        assertThat(GetRandomVal.getVal() >= 10).isEqualTo(false);
+        assertThat(GetRandomVal.getRandomVal() >= 10).isEqualTo(false);
     }
 
     @Test
     public void 범위내_랜덤값() {
-        assertThat(GetRandomVal.getVal() >= 0 && GetRandomVal.getVal() < 10).isEqualTo(true);
+        assertThat(GetRandomVal.getRandomVal() >= 0 && GetRandomVal.getRandomVal() < 10).isEqualTo(true);
     }
 }
