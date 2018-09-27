@@ -12,8 +12,8 @@ public class LadderGameTest {
 
     @Test
     public void 사다리값_정보_출력() {
-        LadderGame ladderGame = new LadderGame(testUsers, testResult, testHeight);
-        ladderGame.storeLadder();
+        LadderGame ladderGame = new LadderGame(testUsers);
+        ladderGame.storeLadder(testHeight);
 
         List<Line> ladderValues = ladderGame.getLadderValues();
         for (Line line : ladderValues) {
