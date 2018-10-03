@@ -1,31 +1,25 @@
 package ladder.domain;
 
-import ladder.domain.LadderGame;
-import ladder.domain.Line;
 import org.junit.Test;
-import java.util.List;
 
+import static org.junit.Assert.*;
 
 public class LadderGameTest {
-    String testUsers = "pobi,honux,crong,jk";
-    int testHeight = 5;
+    LadderGame ladderGame = new LadderGame(5);
 
-    @Test
-    public void 사다리값_정보_출력() {
-        LadderGame ladderGame = new LadderGame(testUsers, testHeight);
-        ladderGame.storeLadder();
-
-        List<Line> ladderValues = ladderGame.getLadderValues();
-        for (Line line : ladderValues) {
-            ladderOneLine(line);
-            System.out.println();
-        }
+    public int move(int i) {
+        return i + 1;
     }
 
-    private void ladderOneLine(Line line) {
-        for (int i = 0; i < testUsers.split(",").length - 1; i++) {
-            int boolVal = line.hasLadder(i) ? 1 : 0;
-            System.out.print(boolVal + " ");
+    @Test
+    public void 반복문_테스트() {
+        for (int i = 0; i < 5; i++) {
+            int temp = i;
+            System.out.print(temp + " -> ");
+            for (int j = 0; j < 4; j++) {
+                temp = move(temp);
+            }
+            System.out.println(temp);
         }
     }
 
