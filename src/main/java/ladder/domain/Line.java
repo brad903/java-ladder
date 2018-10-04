@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Line {
-
     public List<Point> points = new ArrayList<>();
 
     Line(int countOfPerson) {
@@ -65,4 +64,5 @@ public class Line {
     public int hashCode() {
         return Objects.hash(points);
     }
+
 }

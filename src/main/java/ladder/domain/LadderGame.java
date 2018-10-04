@@ -19,6 +19,7 @@ public class LadderGame {
 
     public LadderDto initLadderLines(int countOfPerson) {
         List<List<Boolean>> lineValues = new ArrayList<>();
+
         for (int i = 0; i < ladderHeight; i++) {
             Line line = new Line(countOfPerson);
             lineValues.add(line.valueToDto(countOfPerson));  // ladderDTO
@@ -44,6 +45,5 @@ public class LadderGame {
         }
         return position;
     }
-
 
 }
